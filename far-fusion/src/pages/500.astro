@@ -10,28 +10,19 @@ import Layout from '../layouts/Layout.astro';
       
       <h2 
         class="font-playfair text-3xl md:text-4xl text-[#722F37] mb-6"
-        data-it="Qualcosa è andato storto in cucina"
-        data-en="Something went wrong in the kitchen"
-      >
-        Qualcosa è andato storto in cucina
-      </h2>
+        
+      >{Astro.currentLocale === 'en' ? `Something went wrong in the kitchen` : `Qualcosa è andato storto in cucina`}</h2>
       
       <p 
         class="text-lg text-[#722F37]/70 mb-10 leading-relaxed"
-        data-it="C'è stato un errore imprevisto. I nostri chef digitali stanno già lavorando per risolvere il problema. Per favore, riprova più tardi."
-        data-en="An unexpected error occurred. Our digital chefs are already working to fix the problem. Please try again later."
-      >
-        C'è stato un errore imprevisto. I nostri chef digitali stanno già lavorando per risolvere il problema. Per favore, riprova più tardi.
-      </p>
+        
+      >{Astro.currentLocale === 'en' ? `An unexpected error occurred. Our digital chefs are already working to fix the problem. Please try again later.` : `C'è stato un errore imprevisto. I nostri chef digitali stanno già lavorando per risolvere il problema. Per favore, riprova più tardi.`}</p>
       
       <a 
         href="/" 
         class="inline-block bg-[#722F37] text-white px-10 py-4 rounded-full font-bold hover:bg-[#C5A059] transition-colors shadow-lg active:scale-95"
-        data-it="TORNA ALLA HOME"
-        data-en="BACK TO HOME"
-      >
-        TORNA ALLA HOME
-      </a>
+        
+      >{Astro.currentLocale === 'en' ? `BACK TO HOME` : `TORNA ALLA HOME`}</a>
     </div>
   </section>
 </Layout>

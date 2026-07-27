@@ -18,33 +18,26 @@ import image4 from '../assets/images/4.jpeg';
       <div class="order-1 lg:order-1">
         <h2 
           class="font-playfair text-[#722F37] text-3xl sm:text-4xl md:text-5xl mb-6 leading-tight"
-          data-it="Tradizione Indiana, Palato Contemporaneo"
-          data-en="Indian Tradition, Contemporary Palate"
-        >
-          Tradizione Indiana, <br/>
-          <span class="text-[#C5A059]">Palato Contemporaneo</span>
-        </h2>
+          
+        >{Astro.currentLocale === 'en' ? `Indian Tradition, Contemporary Palate` : `Tradizione Indiana, Palato Contemporaneo`}</h2>
 
         <p 
           class="text-base md:text-lg text-[#722F37]/80 mb-8 leading-relaxed"
-          data-it="Portiamo a Terni i sapori più genuini della cucina indiana. All'Indian Icon, l'intensità delle nostre spezie e le ricette della tradizione incontrano la delicatezza del palato mediterraneo. Aromi bilanciati e cura nei dettagli: l'esperienza perfetta per innamorarsi dell'Oriente fin dal primo assaggio."
-          data-en="We bring the most genuine flavors of Indian cuisine to Terni. At Indian Icon, the intensity of our spices and traditional recipes meet the delicacy of the Mediterranean palate. Balanced aromas and attention to detail: the perfect experience to fall in love with the East from the very first taste."
-        >
-          Portiamo a Terni i sapori più genuini della cucina indiana. All'Indian Icon, l'intensità delle nostre spezie e le ricette della tradizione incontrano la delicatezza del palato mediterraneo. Aromi bilanciati e cura nei dettagli: l'esperienza perfetta per innamorarsi dell'Oriente fin dal primo assaggio.
-        </p>
+          
+        >{Astro.currentLocale === 'en' ? `We bring the most genuine flavors of Indian cuisine to Terni. At Indian Icon, the intensity of our spices and traditional recipes meet the delicacy of the Mediterranean palate. Balanced aromas and attention to detail: the perfect experience to fall in love with the East from the very first taste.` : `Portiamo a Terni i sapori più genuini della cucina indiana. All'Indian Icon, l'intensità delle nostre spezie e le ricette della tradizione incontrano la delicatezza del palato mediterraneo. Aromi bilanciati e cura nei dettagli: l'esperienza perfetta per innamorarsi dell'Oriente fin dal primo assaggio.`}</p>
         
         <ul class="space-y-4 mb-10">
           <li class="flex items-center text-[#722F37] text-sm md:text-base">
             <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#C5A059]/20 flex items-center justify-center mr-3 text-[#C5A059] flex-shrink-0 text-[10px] md:text-xs">✓</span>
-            <span data-it="Ingredienti freschi e spezie originali" data-en="Fresh ingredients and original spices">Ingredienti freschi e spezie originali</span>
+            <span >{Astro.currentLocale === 'en' ? `Fresh ingredients and original spices` : `Ingredienti freschi e spezie originali`}</span>
           </li>
           <li class="flex items-center text-[#722F37] text-sm md:text-base">
             <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#C5A059]/20 flex items-center justify-center mr-3 text-[#C5A059] flex-shrink-0 text-[10px] md:text-xs">✓</span>
-            <span data-it="Chef esperti nella cucina tradizionale" data-en="Expert chefs in traditional cuisine">Chef esperti nella cucina tradizionale</span>
+            <span >{Astro.currentLocale === 'en' ? `Expert chefs in traditional cuisine` : `Chef esperti nella cucina tradizionale`}</span>
           </li>
           <li class="flex items-center text-[#722F37] text-sm md:text-base">
             <span class="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#C5A059]/20 flex items-center justify-center mr-3 text-[#C5A059] flex-shrink-0 text-[10px] md:text-xs">✓</span>
-            <span data-it="Atmosfera calda e accogliente, come a casa" data-en="Warm and welcoming atmosphere, just like home">Atmosfera calda e accogliente, come a casa</span>
+            <span >{Astro.currentLocale === 'en' ? `Warm and welcoming atmosphere, just like home` : `Atmosfera calda e accogliente, come a casa`}</span>
           </li>
         </ul>
 
@@ -54,14 +47,8 @@ import image4 from '../assets/images/4.jpeg';
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center justify-center bg-[#C5A059] text-white px-6 md:px-10 py-3 md:py-5 rounded-xl font-bold shadow-lg hover:bg-[#722F37] transition-all duration-300 group w-full sm:w-auto text-sm md:text-base"
-            data-it="Visualizza il Menù Completo"
-            data-en="View Full Menu"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 mr-3 group-hover:scale-110 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Visualizza il Menù Completo
-          </a>
+            
+          >{Astro.currentLocale === 'en' ? `View Full Menu` : `Visualizza il Menù Completo`}</a>
         </div>
       </div>
 

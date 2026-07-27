@@ -8,18 +8,18 @@
       
       <!-- Quick Links -->
       <div class="flex flex-col items-center">
-        <h3 class="font-playfair text-xl mb-6" data-it="Link Rapidi" data-en="Quick Links">Link Rapidi</h3>
+        <h3 class="font-playfair text-xl mb-6" >{Astro.currentLocale === 'en' ? `Quick Links` : `Link Rapidi`}</h3>
         <ul class="space-y-4 text-sm opacity-70">
-          <li><a href="/#hero" class="hover:text-[#C5A059] transition-colors" data-it="Home" data-en="Home">Home</a></li>
-          <li><a href="/#menu" class="hover:text-[#C5A059] transition-colors" data-it="Il Menù" data-en="The Menu">Il Menù</a></li>
-          <li><a href="https://wa.me/message/6A3K7IYKJASZB1" class="hover:text-[#C5A059] transition-colors" data-it="Prenota un tavolo" data-en="Book a table">Prenota un tavolo</a></li>
-          <li><a href="/#dove-siamo" class="hover:text-[#C5A059] transition-colors" data-it="Dove siamo" data-en="Find us">Dove siamo</a></li>
+          <li><a href="/#hero" class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Home` : `Home`}</a></li>
+          <li><a href="/#menu" class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `The Menu` : `Il Menù`}</a></li>
+          <li><a href="https://wa.me/message/6A3K7IYKJASZB1" class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Book a table` : `Prenota un tavolo`}</a></li>
+          <li><a href="/#dove-siamo" class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Find us` : `Dove siamo`}</a></li>
         </ul>
       </div>
 
       <!-- Contact Info -->
       <div class="flex flex-col items-center">
-        <h3 class="font-playfair text-xl mb-6" data-it="Contatti" data-en="Contacts">Contatti</h3>
+        <h3 class="font-playfair text-xl mb-6" >{Astro.currentLocale === 'en' ? `Contacts` : `Contatti`}</h3>
         <ul class="space-y-4 text-base opacity-90 md:mb-8">
           <li class="flex items-start justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-[#C5A059]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,19 +51,19 @@
 
       <!-- Opening Hours -->
       <div class="flex flex-col items-center">
-        <h3 class="font-playfair text-xl mb-6" data-it="Orari di Apertura" data-en="Opening Hours">Orari di Apertura</h3>
+        <h3 class="font-playfair text-xl mb-6" >{Astro.currentLocale === 'en' ? `Opening Hours` : `Orari di Apertura`}</h3>
         <ul class="space-y-3 text-base opacity-90 w-full max-w-xs mx-auto">
           <li class="flex justify-between border-b border-white/10 pb-2">
-            <span data-it="Pranzo" data-en="Lunch">Pranzo</span>
+            <span >{Astro.currentLocale === 'en' ? `Lunch` : `Pranzo`}</span>
             <span>11.30 - 14.30</span>
           </li>
           <li class="flex justify-between border-b border-white/10 pb-2">
-            <span data-it="Cena" data-en="Dinner">Cena</span>
+            <span >{Astro.currentLocale === 'en' ? `Dinner` : `Cena`}</span>
             <span>18.30 - 22.30</span>
           </li>
           <li class="flex justify-between text-[#C5A059] font-bold">
-            <span data-it="Mercoledì" data-en="Wednesday">Mercoledì</span>
-            <span data-it="Chiuso (Riposo)" data-en="Closed (Rest day)">Chiuso (Riposo)</span>
+            <span >{Astro.currentLocale === 'en' ? `Wednesday` : `Mercoledì`}</span>
+            <span >{Astro.currentLocale === 'en' ? `Closed (Rest day)` : `Chiuso (Riposo)`}</span>
           </li>
         </ul>
 
@@ -84,7 +84,7 @@
 
     <!-- Bottom Footer -->
     <div class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-xs opacity-50 space-y-4 md:space-y-0">
-      <p data-it="© 2026 Indian Icon. Tutti i diritti riservati." data-en="© 2026 Indian Icon. All rights reserved.">© 2026 Indian Icon. Tutti i diritti riservati.</p>
+      <p >{Astro.currentLocale === 'en' ? `© 2026 Indian Icon. All rights reserved.` : `© 2026 Indian Icon. Tutti i diritti riservati.`}</p>
       <div class="flex space-x-6">
         <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
         <a href="/cookie-policy" class="hover:text-white transition-colors">Cookie Policy</a>

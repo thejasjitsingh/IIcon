@@ -18,18 +18,12 @@ import Reviews from '../components/Reviews.astro';
 			</div>
 			<h2 
 				class="font-playfair text-[#722F37] text-3xl md:text-5xl mb-6 md:mb-8 leading-tight"
-				data-it="L'Icona del Gusto Orientale nel Cuore di Terni"
-				data-en="The Icon of Oriental Taste in the Heart of Terni"
-			>
-				L'Icona del Gusto Orientale nel Cuore di Terni
-			</h2>
+				
+			>{Astro.currentLocale === 'en' ? `The Icon of Oriental Taste in the Heart of Terni` : `L'Icona del Gusto Orientale nel Cuore di Terni`}</h2>
 			<p 
 				class="text-base md:text-lg text-[#722F37]/70 leading-relaxed mb-8 md:mb-10"
-				data-it="All'Indian Icon, crediamo che il cibo sia un ponte tra culture. Ogni ingrediente è scelto con cura, ogni spezia è tostata al momento per garantirvi un'esperienza che va oltre il semplice pasto. Venite a scoprire perché siamo l'icona del gusto orientale."
-				data-en="At Indian Icon, we believe that food is a bridge between cultures. Every ingredient is carefully chosen, every spice is freshly toasted to ensure an experience that goes beyond a simple meal. Come and discover why we are the icon of oriental taste."
-			>
-				All'Indian Icon, crediamo che il cibo sia un ponte tra culture. Ogni ingrediente è scelto con cura, ogni spezia è tostata al momento per garantirvi un'esperienza che va oltre il semplice pasto. Venite a scoprire perché siamo l'icona del gusto orientale.
-			</p>
+				
+			>{Astro.currentLocale === 'en' ? `At Indian Icon, we believe that food is a bridge between cultures. Every ingredient is carefully chosen, every spice is freshly toasted to ensure an experience that goes beyond a simple meal. Come and discover why we are the icon of oriental taste.` : `All'Indian Icon, crediamo che il cibo sia un ponte tra culture. Ogni ingrediente è scelto con cura, ogni spezia è tostata al momento per garantirvi un'esperienza che va oltre il semplice pasto. Venite a scoprire perché siamo l'icona del gusto orientale.`}</p>
 			<div class="flex justify-center">
 				<div class="h-1 w-20 bg-[#C5A059]"></div>
 			</div>

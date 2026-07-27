@@ -19,40 +19,24 @@
       <div class="order-1 lg:order-2">
         <span 
           class="inline-block mb-4 text-[#C5A059] font-bold tracking-[0.2em] uppercase text-xs md:text-sm"
-          data-it="I tuoi eventi speciali"
-          data-en="Your special events"
-        >
-          I tuoi eventi speciali
-        </span>
+          
+        >{Astro.currentLocale === 'en' ? `Your special events` : `I tuoi eventi speciali`}</span>
         <h2 
           class="font-playfair text-[#722F37] text-3xl sm:text-4xl md:text-5xl mb-6 leading-tight"
-          data-it="Servizio Catering Esclusivo"
-          data-en="Exclusive Catering Service"
-        >
-          Servizio Catering <br class="hidden lg:block"/>
-          <span class="text-[#C5A059]">Esclusivo</span>
-        </h2>
+          
+        >{Astro.currentLocale === 'en' ? `Exclusive Catering Service` : `Servizio Catering Esclusivo`}</h2>
 
         <p 
           class="text-base md:text-lg text-[#722F37]/80 mb-8 leading-relaxed"
-          data-it="Portiamo l'autentica magia, i profumi e i sapori dell'India direttamente al tuo evento. Che si tratti di un matrimonio, un evento aziendale o una festa privata, curiamo ogni dettaglio per un'esperienza indimenticabile."
-          data-en="We bring the authentic magic, scents, and flavors of India directly to your event. Whether it's a wedding, a corporate event or a private party, we take care of every detail for an unforgettable experience."
-        >
-          Portiamo l'autentica magia, i profumi e i sapori dell'India direttamente al tuo evento. Che si tratti di un matrimonio, un evento aziendale o una festa privata, curiamo ogni dettaglio per un'esperienza indimenticabile.
-        </p>
+          
+        >{Astro.currentLocale === 'en' ? `We bring the authentic magic, scents, and flavors of India directly to your event. Whether it's a wedding, a corporate event or a private party, we take care of every detail for an unforgettable experience.` : `Portiamo l'autentica magia, i profumi e i sapori dell'India direttamente al tuo evento. Che si tratti di un matrimonio, un evento aziendale o una festa privata, curiamo ogni dettaglio per un'esperienza indimenticabile.`}</p>
         
         <div class="flex">
           <a 
             href="/catering" 
             class="inline-flex items-center justify-center bg-transparent border-2 border-[#722F37] text-[#722F37] px-6 md:px-10 py-3 md:py-4 rounded-xl font-bold hover:bg-[#722F37] hover:text-white transition-all duration-300 group w-full sm:w-auto text-sm md:text-base"
-            data-it="Scopri il Catering"
-            data-en="Discover Catering"
-          >
-            Scopri il Catering
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 ml-3 group-hover:translate-x-2 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+            
+          >{Astro.currentLocale === 'en' ? `Discover Catering` : `Scopri il Catering`}</a>
         </div>
       </div>
 

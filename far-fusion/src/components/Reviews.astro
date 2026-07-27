@@ -40,19 +40,13 @@ const reviews = [
         </svg>
         <span 
           class="text-[#C5A059] font-bold tracking-widest uppercase text-xs md:text-sm"
-          data-it="Cosa dicono di noi"
-          data-en="What they say about us"
-        >
-          Cosa dicono di noi
-        </span>
+          
+        >{Astro.currentLocale === 'en' ? `What they say about us` : `Cosa dicono di noi`}</span>
       </div>
       <h2 
         class="font-playfair text-[#722F37] text-3xl sm:text-4xl md:text-5xl mb-6"
-        data-it="Recensioni Google"
-        data-en="Google Reviews"
-      >
-        Recensioni Google
-      </h2>
+        
+      >{Astro.currentLocale === 'en' ? `Google Reviews` : `Recensioni Google`}</h2>
       <div class="flex justify-center gap-1 mb-6">
         {[1, 2, 3, 4, 5].map(() => (
           <svg class="w-5 h-5 md:w-6 md:h-6 text-[#C5A059] fill-current" viewBox="0 0 20 20">
@@ -62,12 +56,8 @@ const reviews = [
       </div>
       <p 
         class="text-[#722F37]/70 max-w-2xl mx-auto text-sm md:text-base px-4"
-        data-it="La soddisfazione dei nostri clienti è la nostra più grande ricompensa. Scopri perché Indian Icon è il punto di riferimento per la cucina indiana a Terni."
-        data-en="The satisfaction of our customers is our greatest reward. Discover why Indian Icon is the landmark for Indian cuisine in Terni."
-      >
-        La soddisfazione dei nostri clienti è la nostra più grande ricompensa. 
-        Scopri perché Indian Icon è il punto di riferimento per la cucina indiana a Terni.
-      </p>
+        
+      >{Astro.currentLocale === 'en' ? `The satisfaction of our customers is our greatest reward. Discover why Indian Icon is the landmark for Indian cuisine in Terni.` : `La soddisfazione dei nostri clienti è la nostra più grande ricompensa. Scopri perché Indian Icon è il punto di riferimento per la cucina indiana a Terni.`}</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -89,10 +79,8 @@ const reviews = [
               <h3 class="font-bold text-[#722F37] text-sm md:text-base">{review.name}</h3>
               <p 
                 class="text-[10px] md:text-xs text-[#722F37]/50"
-                data-it={review.date}
-                data-en={review.date.replace('settimane fa', 'weeks ago').replace('mese fa', 'month ago')}
               >
-                {review.date}
+                {Astro.currentLocale === 'en' ? review.date.replace('settimane fa', 'weeks ago').replace('mese fa', 'month ago') : review.date}
               </p>
             </div>
             <div class="ml-auto">
@@ -110,14 +98,12 @@ const reviews = [
 
           <p 
             class="text-[#722F37]/80 italic leading-relaxed flex-grow text-sm md:text-base"
-            data-it={review.text}
-            data-en={
+          >
+            "{Astro.currentLocale === 'en' ? (
               review.name === "Marco Rossi" ? "Best Indian restaurant in Terni! Authentic flavors, very kind staff and welcoming atmosphere. The Chicken Tikka Masala is out of this world." :
               review.name === "Elena Bianchi" ? "An incredible culinary experience. The naans are warm and fragrant, the curries rich in spices but balanced. We will definitely be back!" :
               "Impeccable service and delicious food. Finally a real Indian restaurant that keeps its promises. Highly recommend the Biryani."
-            }
-          >
-            "{review.text}"
+            ) : review.text}"
           </p>
         </div>
       ))}
@@ -129,14 +115,8 @@ const reviews = [
         target="_blank" 
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 bg-[#722F37] text-white px-8 py-3 rounded-full font-bold hover:bg-[#C5A059] transition-colors shadow-lg"
-        data-it="Leggi altre recensioni"
-        data-en="Read more reviews"
-      >
-        Leggi altre recensioni
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-        </svg>
-      </a>
+        
+      >{Astro.currentLocale === 'en' ? `Read more reviews` : `Leggi altre recensioni`}</a>
     </div>
   </div>
 </section>
