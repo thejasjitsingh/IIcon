@@ -1,0 +1,83 @@
+---
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<div class="pdf-viewer" data-url={url}>
+  <div id="pdf-container" class="flex flex-col items-center gap-4 bg-gray-100 p-4 rounded-lg overflow-auto max-h-[80vh]">
+    <!-- Canvas elements will be injected here -->
+    <div id="pdf-loader" class="text-[#722F37] font-bold animate-pulse">
+      Caricamento menù...
+    </div>
+  </div>
+</div>
+
+<script>
+  import * as pdfjsLib from 'pdfjs-dist';
+
+  // Set worker path
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.mjs';
+
+  const viewer = document.querySelector('.pdf-viewer');
+  const container = document.getElementById('pdf-container');
+  const loader = document.getElementById('pdf-loader');
+
+  if (viewer && container) {
+    const url = (viewer as HTMLElement).dataset.url;
+
+    if (url) {
+      renderPDF(url);
+    }
+  }
+
+  async function renderPDF(url: string) {
+    try {
+      const loadingTask = pdfjsLib.getDocument(url);
+      const pdf = await loadingTask.promise;
+      
+      if (loader) loader.remove();
+
+      // Render all pages
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        const page = await pdf.getPage(pageNum);
+        const canvas = document.createElement('canvas');
+        canvas.className = 'shadow-lg max-w-full h-auto rounded';
+        container?.appendChild(canvas);
+
+        const context = canvas.getContext('2d');
+        const viewport = page.getViewport({ scale: 1.5 });
+
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: context!,
+          viewport: viewport
+        };
+
+        await page.render(renderContext).promise;
+      }
+    } catch (error) {
+      console.error('Error rendering PDF:', error);
+      if (container) {
+        container.innerHTML = `<div class="text-red-600 p-4">Errore nel caricamento del PDF. <br/> <a href="${url}" class="underline" target="_blank">Scarica il file invece</a>.</div>`;
+      }
+    }
+  }
+</script>
+
+<style>
+  #pdf-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  #pdf-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  #pdf-container::-webkit-scrollbar-thumb {
+    background: #722F37;
+    border-radius: 4px;
+  }
+</style>

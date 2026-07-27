@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Pagina Non Trovata | Indian Icon" showLogo={false}>
+  <section class="min-h-screen flex items-center justify-center px-4 bg-[#FDFBF7] pb-20">
+    <div class="text-center max-w-2xl">
+      <h1 class="font-playfair text-8xl md:text-9xl text-[#722F37] mb-4">404</h1>
+      <div class="h-1 w-20 bg-[#C5A059] mx-auto mb-8"></div>
+      
+      <h2 
+        class="font-playfair text-3xl md:text-4xl text-[#722F37] mb-6"
+        data-it="Oops! La pagina si è persa tra le spezie"
+        data-en="Oops! The page got lost among the spices"
+      >
+        Oops! La pagina si è persa tra le spezie
+      </h2>
+      
+      <p 
+        class="text-lg text-[#722F37]/70 mb-10 leading-relaxed"
+        data-it="Sembra che la strada che stai cercando non porti a nessuna delle nostre prelibatezze. Ma non preoccuparti, il viaggio nel gusto continua sulla nostra Home Page."
+        data-en="It seems the path you're looking for doesn't lead to any of our delicacies. But don't worry, the journey into taste continues on our Home Page."
+      >
+        Sembra che la strada che stai cercando non porti a nessuna delle nostre prelibatezze. Ma non preoccuparti, il viaggio nel gusto continua sulla nostra Home Page.
+      </p>
+      
+      <a 
+        href="/" 
+        class="inline-block bg-[#722F37] text-white px-10 py-4 rounded-full font-bold hover:bg-[#C5A059] transition-colors shadow-lg active:scale-95"
+        data-it="TORNA ALLA HOME"
+        data-en="BACK TO HOME"
+      >
+        TORNA ALLA HOME
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  section {
+    padding-top: 5rem;
+  }
+</style>

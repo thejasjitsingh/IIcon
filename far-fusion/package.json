@@ -1,0 +1,29 @@
+{
+  "name": "far-fusion",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "postinstall": "cp node_modules/pdfjs-dist/build/pdf.worker.mjs public/",
+    "generate-types": "wrangler types",
+    "deploy": "astro build && wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^13.6.1",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.4",
+    "pdfjs-dist": "^6.0.227",
+    "tailwindcss": "^4.3.0",
+    "wrangler": "^4.98.0"
+  },
+  "overrides": {
+    "vite": "^7"
+  }
+}

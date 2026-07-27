@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Bookman';
+  src: url('/fonts/Bookman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-bookman: "Bookman", serif;
+  --font-playfair: "Bookman", serif;
+  --font-lato: "Bookman", serif;
+}
