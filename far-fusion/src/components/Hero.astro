@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import terrazzaImage from '../assets/images/terrazza.jpeg';
 ---
 
-<section id="hero" class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-32 md:pt-20">
+<section id="hero" class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-24 md:py-32">
   <!-- Background Image Placeholder with Overlay -->
   <div class="absolute inset-0 z-0">
     <Image 
@@ -15,9 +15,9 @@ import terrazzaImage from '../assets/images/terrazza.jpeg';
   </div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white flex flex-col items-center">
     <span 
-      class="inline-block mb-6 text-[#C5A059] font-bold tracking-[0.3em] uppercase text-xs md:text-sm animate-fade-in"
+      class="inline-block mb-4 text-[#C5A059] font-bold tracking-[0.2em] uppercase text-xs md:text-sm animate-fade-in"
       data-it="Scoperta dei gusti orientali"
       data-en="Discovery of oriental tastes"
     >
@@ -25,7 +25,7 @@ import terrazzaImage from '../assets/images/terrazza.jpeg';
     </span>
     
     <h1 
-      class="font-playfair text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight drop-shadow-lg"
+      class="font-playfair text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight drop-shadow-lg"
       data-it="Benvenuti all'Indian Icon"
       data-en="Welcome to Indian Icon"
     >
@@ -34,17 +34,17 @@ import terrazzaImage from '../assets/images/terrazza.jpeg';
     </h1>
     
     <p 
-      class="max-w-2xl mx-auto text-base md:text-xl mb-12 font-light opacity-90 leading-relaxed"
+      class="max-w-xl mx-auto text-sm md:text-lg mb-8 font-light opacity-90 leading-relaxed"
       data-it="L’autentico ristorante indiano di Terni, dove sapori, spezie e tradizioni si incontrano in piatti preparati ogni giorno con ingredienti di alta qualità."
       data-en="The authentic Indian restaurant in Terni, where flavors, spices, and traditions meet in dishes prepared daily with high-quality ingredients."
     >
       L’autentico ristorante indiano di Terni, dove sapori, spezie e tradizioni si incontrano in piatti preparati ogni giorno con ingredienti di alta qualità.
     </p>
     
-    <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <a 
         href="https://wa.me/message/6A3K7IYKJASZB1" 
-        class="group relative overflow-hidden bg-[#722F37] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-xl w-full sm:w-auto min-w-[200px]"
+        class="group relative overflow-hidden bg-[#722F37] text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 shadow-xl w-full sm:w-auto min-w-[180px]"
       >
         <span class="relative z-10" data-it="Prenota un tavolo" data-en="Book a table">Prenota un tavolo</span>
         <div class="absolute inset-0 bg-[#C5A059] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -52,7 +52,7 @@ import terrazzaImage from '../assets/images/terrazza.jpeg';
       
       <a 
         href="#menu" 
-        class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg transition-all duration-300 hover:bg-white hover:text-[#722F37] w-full sm:w-auto min-w-[200px]"
+        class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base transition-all duration-300 hover:bg-white hover:text-[#722F37] w-full sm:w-auto min-w-[180px]"
         data-it="Visualizza il Menù"
         data-en="View the Menu"
       >
