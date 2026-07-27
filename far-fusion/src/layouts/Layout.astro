@@ -53,12 +53,12 @@ import '../styles/global.css';
 						<a 
 							href={Astro.currentLocale === 'en' ? Astro.url.pathname.replace(/^\/en/, '') || '/' : '/en' + (Astro.url.pathname === '/' ? '' : Astro.url.pathname)}
 							class="text-white w-12 h-12 flex items-center justify-center focus:outline-none z-[60] transition-all duration-300 rounded-full hover:bg-white/10 font-bold text-base border border-white/20 hover:border-white/50"
-							aria-label="Switch Language"
+							aria-label="Cambia Linguauage"
 						>
 							{Astro.currentLocale === 'en' ? 'IT' : 'EN'}
 						</a>
 						<div class="absolute top-[3.25rem] left-1/2 -translate-x-1/2 pointer-events-none w-max opacity-80 pt-1">
-							<span class="animate-bounce block text-white text-[10px] sm:text-xs font-medium tracking-wider drop-shadow-md" >{Astro.currentLocale === 'en' ? `↑ Switch lang` : `↑ Swith Lang`}</span>
+							<span class="animate-bounce block text-white text-[10px] sm:text-xs font-medium tracking-wider drop-shadow-md" >{Astro.currentLocale === 'en' ? `↑ Cambia Lingua` : `↑ Swith Lang`}</span>
 						</div>
 					</div>
 					
