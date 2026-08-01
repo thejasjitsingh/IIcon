@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import c5Img from '../assets/images/c5.jpeg';
 ---
 
 <section id="catering-highlight" class="py-16 md:py-24 bg-white relative overflow-hidden border-t border-[#722F37]/5">
@@ -8,8 +10,8 @@
       <!-- Image/Visual -->
       <div class="order-2 lg:order-1 relative group">
         <div class="absolute inset-0 bg-[#C5A059] rounded-2xl md:rounded-3xl translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 opacity-20 transition-transform group-hover:translate-x-5 group-hover:translate-y-5 duration-500"></div>
-        <img 
-          src="/c5.jpeg" 
+        <Image 
+          src={c5Img} 
           alt="Servizio Catering Indiano" 
           class="relative z-10 rounded-2xl md:rounded-3xl shadow-xl w-full h-[300px] md:h-[450px] object-cover"
         />
