@@ -10,10 +10,10 @@
       <div class="flex flex-col items-center">
         <h3 class="font-playfair text-xl mb-6" >{Astro.currentLocale === 'en' ? `Quick Links` : `Link Rapidi`}</h3>
         <ul class="space-y-4 text-sm opacity-70">
-          <li><a href="/#hero" class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Home` : `Home`}</a></li>
-          <li><a href="/#menu" class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `The Menu` : `Il Menù`}</a></li>
+          <li><a href={Astro.currentLocale === 'en' ? "/en/#hero" : "/#hero"} class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Home` : `Home`}</a></li>
+          <li><a href={Astro.currentLocale === 'en' ? "/en/#menu" : "/#menu"} class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `The Menu` : `Il Menù`}</a></li>
           <li><a href="https://wa.me/message/6A3K7IYKJASZB1" class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Book a table` : `Prenota un tavolo`}</a></li>
-          <li><a href="/#dove-siamo" class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Find us` : `Dove siamo`}</a></li>
+          <li><a href={Astro.currentLocale === 'en' ? "/en/#dove-siamo" : "/#dove-siamo"} class="hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Find us` : `Dove siamo`}</a></li>
         </ul>
       </div>
 
@@ -86,8 +86,8 @@
     <div class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-xs opacity-50 space-y-4 md:space-y-0">
       <p >{Astro.currentLocale === 'en' ? `© 2026 Indian Icon. All rights reserved.` : `© 2026 Indian Icon. Tutti i diritti riservati.`}</p>
       <div class="flex space-x-6">
-        <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
-        <a href="/cookie-policy" class="hover:text-white transition-colors">Cookie Policy</a>
+        <a href={Astro.currentLocale === 'en' ? "/en/privacy-policy" : "/privacy-policy"} class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href={Astro.currentLocale === 'en' ? "/en/cookie-policy" : "/cookie-policy"} class="hover:text-white transition-colors">Cookie Policy</a>
       </div>
     </div>
   </div>

@@ -33,7 +33,7 @@
         
         <div class="flex">
           <a 
-            href="/catering" 
+            href={Astro.currentLocale === 'en' ? "/en/catering" : "/catering"} 
             class="inline-flex items-center justify-center bg-transparent border-2 border-[#722F37] text-[#722F37] px-6 md:px-10 py-3 md:py-4 rounded-xl font-bold hover:bg-[#722F37] hover:text-white transition-all duration-300 group w-full sm:w-auto text-sm md:text-base"
             
           >{Astro.currentLocale === 'en' ? `Discover Catering` : `Scopri il Catering`}</a>
