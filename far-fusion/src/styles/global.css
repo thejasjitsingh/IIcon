@@ -9,6 +9,11 @@
 }
 
 @theme {
+  --color-primary: #722F37;
+  --color-secondary: #C5A059;
+  --color-canvas: #FDFBF7;
+  --color-ink: #722F37;
+
   --font-bookman: "Bookman", serif;
   --font-playfair: "Bookman", serif;
   --font-lato: "Bookman", serif;

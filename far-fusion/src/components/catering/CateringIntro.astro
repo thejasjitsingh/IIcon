@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import c5Img from '../../assets/images/c5.jpeg';
+---
+
+<section class="py-10 md:py-24 bg-canvas">
+    <div class="max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            <div class="w-full lg:w-1/2 relative">
+                <Image src={c5Img} alt="Authentic Indian Food - Catering Service in Umbria Italy" class="relative z-10 w-full h-[250px] md:h-[500px] object-cover rounded-2xl shadow-2xl" />
+            </div>
+            <div class="w-full lg:w-1/2">
+                <div class="mb-6">
+                    <div class="h-1 w-20 bg-secondary mb-6"></div>
+                    <h2 class="font-playfair text-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight" >{Astro.currentLocale === 'en' ? `The Art of Indian Hospitality at Your Service` : `L'Arte dell'Ospitalità Indiana al Tuo Servizio`}</h2>
+                </div>
+                <p class="text-lg text-primary/80 mb-6 leading-relaxed" >{Astro.currentLocale === 'en' ? `Indian Icon has the experience and passion to organize your catering with a deliciously personalized touch. We take care of every detail, from the choice of spices to the presentation of the dishes, to ensure a complete sensory experience.` : `Indian Icon ha l'esperienza e la passione per organizzare il tuo catering con un tocco deliziosamente personalizzato. Curiamo ogni dettaglio, dalla scelta delle spezie alla presentazione dei piatti, per garantire un'esperienza sensoriale completa.`}</p>
+                <p class="text-lg text-primary/80 mb-8 leading-relaxed" >{Astro.currentLocale === 'en' ? `Whether it's an intimate reception or a grand celebration, our team is ready to turn your vision into reality with menus that celebrate the true Indian gastronomic tradition.` : `Che si tratti di un intimo ricevimento o di una grande celebrazione, il nostro team è pronto a trasformare la tua visione in realtà con menù che celebrano la vera tradizione gastronomica indiana.`}</p>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-center text-primary">
+                        <svg class="w-6 h-6 text-secondary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="font-bold text-lg" >{Astro.currentLocale === 'en' ? `Custom Menus` : `Menù Personalizzati`}</span>
+                    </li>
+                    <li class="flex items-center text-primary">
+                        <svg class="w-6 h-6 text-secondary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="font-bold text-lg" >{Astro.currentLocale === 'en' ? `High Quality Ingredients` : `Ingredienti di Alta Qualità`}</span>
+                    </li>
+                    <li class="flex items-center text-primary">
+                        <svg class="w-6 h-6 text-secondary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="font-bold text-lg" >{Astro.currentLocale === 'en' ? `Professional Staff` : `Staff Professionale`}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

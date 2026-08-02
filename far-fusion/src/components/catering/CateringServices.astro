@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import c2Img from '../../assets/images/c2.jpeg';
+import c3Img from '../../assets/images/c3.jpeg';
+import c7Img from '../../assets/images/c7.jpg';
+---
+
+<section id="servizi" class="py-10 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8">
+        <div class="text-center mb-20">
+            <span class="text-secondary font-bold tracking-wider uppercase mb-2 block" >{Astro.currentLocale === 'en' ? `WHAT WE DO` : `COSA FACCIAMO`}</span>
+            <h2 class="font-playfair text-primary text-3xl sm:text-4xl md:text-5xl font-bold mb-6" >{Astro.currentLocale === 'en' ? `Our Event Services` : `I Nostri Servizi per Eventi`}</h2>
+            <div class="flex justify-center">
+                <div class="h-1 w-24 bg-secondary"></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            <!-- Service 1 -->
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden rounded-2xl mb-6 relative shadow-lg h-80">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                    <Image src={c3Img} alt="Indian Wedding Catering in Umbria Italy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <h3 class="font-playfair text-2xl text-primary font-bold mb-3 text-center group-hover:text-secondary transition-colors" >{Astro.currentLocale === 'en' ? `Indian & Classic Weddings` : `Matrimoni Indiani & Classici`}</h3>
+                <p class="text-center text-primary/70 leading-relaxed px-4" >{Astro.currentLocale === 'en' ? `Setups and menus to make your most beautiful day an explosion of joy, colors and flavors. We handle large numbers while maintaining the highest quality.` : `Allestimenti e menù per rendere il tuo giorno più bello un'esplosione di gioia, colori e sapori. Gestiamo grandi numeri mantenendo l'altissima qualità.`}</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="group cursor-pointer mt-0 md:mt-12">
+                <div class="overflow-hidden rounded-2xl mb-6 relative shadow-lg h-80">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                    <Image src={c2Img} alt="Corporate Event Indian Catering Umbria" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <h3 class="font-playfair text-2xl text-primary font-bold mb-3 text-center group-hover:text-secondary transition-colors" >{Astro.currentLocale === 'en' ? `Corporate Events` : `Eventi Aziendali`}</h3>
+                <p class="text-center text-primary/70 leading-relaxed px-4" >{Astro.currentLocale === 'en' ? `From gala dinners to corporate light lunches. Surprise partners and employees with refined and out-of-the-ordinary catering.` : `Dalle cene di gala ai light lunch aziendali. Sorprendi partner e dipendenti con un catering raffinato e diverso dal solito.`}</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden rounded-2xl mb-6 relative shadow-lg h-80">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                    <Image src={c7Img} alt="Private Party Indian Catering in Umbria Italy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <h3 class="font-playfair text-2xl text-primary font-bold mb-3 text-center group-hover:text-secondary transition-colors" >{Astro.currentLocale === 'en' ? `Private Parties` : `Feste Private`}</h3>
+                <p class="text-center text-primary/70 leading-relaxed px-4" >{Astro.currentLocale === 'en' ? `Birthdays, anniversaries, graduations. We bring the party directly to your home or the location of your choice with table or buffet service.` : `Compleanni, anniversari, lauree. Portiamo la festa direttamente a casa tua o nella location da te scelta con servizio al tavolo o a buffet.`}</p>
+            </div>
+        </div>
+    </div>
+</section>

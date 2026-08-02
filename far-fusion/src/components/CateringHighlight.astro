@@ -3,40 +3,40 @@ import { Image } from 'astro:assets';
 import c5Img from '../assets/images/c5.jpeg';
 ---
 
-<section id="catering-highlight" class="py-16 md:py-24 bg-white relative overflow-hidden border-t border-[#722F37]/5">
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<section id="catering-highlight" class="py-10 md:py-24 bg-white relative overflow-hidden border-t border-primary/5">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-8 lg:gap-16 items-center">
       
       <!-- Image/Visual -->
       <div class="order-2 lg:order-1 relative group">
-        <div class="absolute inset-0 bg-[#C5A059] rounded-2xl md:rounded-3xl translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 opacity-20 transition-transform group-hover:translate-x-5 group-hover:translate-y-5 duration-500"></div>
+        <div class="absolute inset-0 bg-secondary rounded-2xl md:rounded-3xl translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 opacity-20 transition-transform group-hover:translate-x-5 group-hover:translate-y-5 duration-500"></div>
         <Image 
           src={c5Img} 
           alt="Servizio Catering Indiano" 
-          class="relative z-10 rounded-2xl md:rounded-3xl shadow-xl w-full h-[300px] md:h-[450px] object-cover"
+          class="relative z-10 rounded-2xl md:rounded-3xl shadow-xl w-full h-[250px] md:h-[450px] object-cover"
         />
       </div>
 
       <!-- Text Content -->
       <div class="order-1 lg:order-2">
         <span 
-          class="inline-block mb-4 text-[#C5A059] font-bold tracking-[0.2em] uppercase text-xs md:text-sm"
+          class="inline-block mb-4 text-secondary font-bold tracking-[0.2em] uppercase text-xs md:text-sm"
           
         >{Astro.currentLocale === 'en' ? `Your special events` : `I tuoi eventi speciali`}</span>
         <h2 
-          class="font-playfair text-[#722F37] text-3xl sm:text-4xl md:text-5xl mb-6 leading-tight"
+          class="font-playfair text-primary text-3xl sm:text-4xl md:text-5xl mb-6 leading-tight"
           
         >{Astro.currentLocale === 'en' ? `Exclusive Catering Service` : `Servizio Catering Esclusivo`}</h2>
 
         <p 
-          class="text-base md:text-lg text-[#722F37]/80 mb-8 leading-relaxed"
+          class="text-base md:text-lg text-primary/80 mb-8 leading-relaxed"
           
         >{Astro.currentLocale === 'en' ? `We bring the authentic magic, scents, and flavors of India directly to your event. Whether it's a wedding, a corporate event or a private party, we take care of every detail for an unforgettable experience.` : `Portiamo l'autentica magia, i profumi e i sapori dell'India direttamente al tuo evento. Che si tratti di un matrimonio, un evento aziendale o una festa privata, curiamo ogni dettaglio per un'esperienza indimenticabile.`}</p>
         
         <div class="flex">
           <a 
             href={Astro.currentLocale === 'en' ? "/en/catering" : "/catering"} 
-            class="inline-flex items-center justify-center bg-transparent border-2 border-[#722F37] text-[#722F37] px-6 md:px-10 py-3 md:py-4 rounded-xl font-bold hover:bg-[#722F37] hover:text-white transition-all duration-300 group w-full sm:w-auto text-sm md:text-base"
+            class="inline-flex items-center justify-center bg-transparent border-2 border-primary text-primary px-6 md:px-10 py-3 md:py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all duration-300 group w-full sm:w-auto text-sm md:text-base"
             
           >{Astro.currentLocale === 'en' ? `Discover Catering` : `Scopri il Catering`}</a>
         </div>

@@ -16,7 +16,8 @@ const defaultDescEn = "Indian Icon is the authentic Indian restaurant in Terni, 
 const finalDescription = description || (Astro.currentLocale === 'en' ? defaultDescEn : defaultDescIt);
 
 import Footer from '../components/Footer.astro';
-import logo from '../assets/images/logo.png';
+import Navbar from '../components/layout/Navbar.astro';
+import FloatingCTA from '../components/layout/FloatingCTA.astro';
 import '../styles/global.css';
 ---
 
@@ -42,140 +43,9 @@ import '../styles/global.css';
 		  gtag('config', 'G-FSGW2CW62Z');
 		</script>
 	</head>
-	<body class="bg-[#FDFBF7] text-[#722F37] font-bookman selection:bg-[#C5A059] selection:text-white">
+	<body class="bg-canvas text-primary font-bookman selection:bg-secondary selection:text-white">
 		
-		<!-- Navigation -->
-		<nav id="main-nav" class="absolute top-0 left-0 w-full z-50 h-20 bg-transparent">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-				<div class="relative flex items-center justify-between h-full">
-					<!-- Left: Language Selector -->
-					<div class="flex items-center relative">
-						<a 
-							href={Astro.currentLocale === 'en' ? Astro.url.pathname.replace(/^\/en/, '') || '/' : '/en' + (Astro.url.pathname === '/' ? '' : Astro.url.pathname)}
-							class="text-white w-12 h-12 flex items-center justify-center focus:outline-none z-[60] transition-all duration-300 rounded-full hover:bg-white/10 font-bold text-base border border-white/20 hover:border-white/50"
-							aria-label="Cambia Linguauage"
-						>
-							{Astro.currentLocale === 'en' ? 'IT' : 'EN'}
-						</a>
-						<div class="absolute top-[3.25rem] left-1/2 -translate-x-1/2 pointer-events-none w-max opacity-80 pt-1">
-							<span class="animate-bounce block text-white text-[10px] sm:text-xs font-medium tracking-wider drop-shadow-md" >{Astro.currentLocale === 'en' ? `↑ Cambia Lingua` : `↑ Swith Lang`}</span>
-						</div>
-					</div>
-					
-					<!-- Center: Centered Logo -->
-					{showLogo && (
-						<div class="absolute left-1/2 -translate-x-1/2 top-0 flex flex-col items-center text-center pointer-events-none" id="logo-container">
-							<a href={Astro.currentLocale === 'en' ? "/en/" : "/"} class="flex flex-col items-center pointer-events-auto pt-2">
-								<img src={logo.src} alt="Indian Icon Logo" class="logo-img h-20 md:h-28 w-auto object-contain transition-all duration-500 filter brightness-0 invert drop-shadow-xl" />
-							</a>
-						</div>
-					)}
-
-					<!-- Right: Hamburger Button -->
-					<div class="flex items-center">
-						<button 
-							id="menu-toggle"
-							class="text-white p-2 focus:outline-none z-[60] transition-colors duration-300 rounded-full hover:bg-white/10"
-							aria-label="Toggle Menu"
-						>
-							<svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-							</svg>
-							<svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-							</svg>
-						</button>
-					</div>
-				</div>
-			</div>
-
-			<!-- Mobile/Full-screen Menu Overlay (Drawer from Right) -->
-			<div 
-				id="menu-overlay" 
-				class="fixed inset-y-0 right-0 w-full sm:w-80 bg-[#722F37] z-50 flex flex-col pt-32 px-10 transition-all duration-500 ease-in-out opacity-0 translate-x-full pointer-events-none shadow-2xl"
-			>
-				<div class="flex flex-col space-y-8 text-left">
-					<a href={Astro.currentLocale === 'en' ? "/en/#hero" : "/#hero"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Home` : `Home`}</a>
-					<a href={Astro.currentLocale === 'en' ? "/en/#menu" : "/#menu"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `The Menu` : `Il Menù`}</a>
-					<a href={Astro.currentLocale === 'en' ? "/en/#recensioni" : "/#recensioni"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Reviews` : `Recensioni`}</a>
-					<a href={Astro.currentLocale === 'en' ? "/en/#dove-siamo" : "/#dove-siamo"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Find Us` : `Dove Siamo`}</a>
-					<a href={Astro.currentLocale === 'en' ? "/en/catering" : "/catering"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-[#C5A059] transition-colors" >{Astro.currentLocale === 'en' ? `Catering` : `Catering`}</a>
-				</div>
-				<div class="mt-16 pt-8 border-t border-white/10">
-					<a href="https://wa.me/message/6A3K7IYKJASZB1" class="block text-center bg-[#C5A059] text-white py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg active:scale-95" >{Astro.currentLocale === 'en' ? `BOOK A TABLE` : `PRENOTA UN TAVOLO`}</a>
-				</div>
-			</div>
-		</nav>
-
-		<script>
-			const menuToggle = document.getElementById('menu-toggle');
-
-			const menuOverlay = document.getElementById('menu-overlay');
-			const hamburgerIcon = document.getElementById('hamburger-icon');
-			const closeIcon = document.getElementById('close-icon');
-			const menuLinks = document.querySelectorAll('.menu-link');
-			const scrollToTopBtn = document.getElementById('scroll-to-top');
-			const orderCtaBtn = document.getElementById('order-cta');
-
-			function toggleMenu() {
-				const isOpen = menuOverlay.classList.contains('opacity-100');
-				
-				if (isOpen) {
-					// Close menu
-					menuOverlay.classList.remove('opacity-100', 'translate-x-0');
-					menuOverlay.classList.add('opacity-0', 'translate-x-full', 'pointer-events-none');
-					hamburgerIcon.classList.remove('hidden');
-					closeIcon.classList.add('hidden');
-					document.body.style.overflow = '';
-				} else {
-					// Open menu
-					menuOverlay.classList.remove('opacity-0', 'translate-x-full', 'pointer-events-none');
-					menuOverlay.classList.add('opacity-100', 'translate-x-0');
-					hamburgerIcon.classList.add('hidden');
-					closeIcon.classList.remove('hidden');
-					document.body.style.overflow = 'hidden';
-				}
-			}
-
-			menuToggle?.addEventListener('click', toggleMenu);
-
-			// Close menu when clicking a link
-			menuLinks.forEach(link => {
-				link.addEventListener('click', () => {
-					if (!menuOverlay.classList.contains('pointer-events-none')) {
-						toggleMenu();
-					}
-				});
-			});
-
-			// Handle scroll for buttons visibility
-			window.addEventListener('scroll', () => {
-				const scrollY = window.scrollY;
-
-				// Scroll to top button visibility
-				if (scrollY > 300) {
-					scrollToTopBtn?.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-					scrollToTopBtn?.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
-					
-					orderCtaBtn?.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-					orderCtaBtn?.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
-				} else {
-					scrollToTopBtn?.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-					scrollToTopBtn?.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
-
-					orderCtaBtn?.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-					orderCtaBtn?.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
-				}
-			});
-
-			// Scroll to top action
-			scrollToTopBtn?.addEventListener('click', () => {
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth'
-				});
-			});
-		</script>
+		<Navbar showLogo={showLogo} />
 
 		<main>
 			<slot />
@@ -183,28 +53,7 @@ import '../styles/global.css';
 
 		<Footer />
 
-		<!-- Fixed Order CTA Button -->
-		<a 
-			id="order-cta"
-			href="https://wa.me/message/6A3K7IYKJASZB1"
-			class="fixed bottom-6 left-6 right-20 z-40 bg-[#C5A059] text-white px-6 py-4 rounded-full shadow-2xl font-bold transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap border border-white/20 sm:left-auto sm:right-24 sm:w-auto group opacity-0 translate-y-10 pointer-events-none"
-		>
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-				<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-			</svg>
-			<span >{Astro.currentLocale === 'en' ? `Order now` : `Ordina ora`}</span>
-		</a>
-
-		<!-- Scroll to Top Button -->
-		<button 
-			id="scroll-to-top" 
-			class="fixed bottom-6 right-6 z-50 bg-[#FDFBF7] text-[#722F37] p-3 rounded-full shadow-lg opacity-0 translate-y-10 pointer-events-none transition-all duration-300 hover:scale-110 active:scale-95 border border-[#722F37]/10"
-			aria-label="Back to Top"
-		>
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-			</svg>
-		</button>
+		<FloatingCTA />
 
 		<style is:global>
 			@reference "../styles/global.css";

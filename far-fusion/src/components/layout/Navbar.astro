@@ -1,0 +1,108 @@
+---
+import logo from '../../assets/images/logo.png';
+
+interface Props {
+	showLogo?: boolean;
+}
+
+const { showLogo = true } = Astro.props;
+---
+
+<nav id="main-nav" class="absolute top-0 left-0 w-full z-50 h-20 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-4 md:px-6 lg:px-8 h-full">
+        <div class="relative flex items-center justify-between h-full">
+            <!-- Left: Language Selector -->
+            <div class="flex items-center relative">
+                <a 
+                    href={Astro.currentLocale === 'en' ? Astro.url.pathname.replace(/^\/en/, '') || '/' : '/en' + (Astro.url.pathname === '/' ? '' : Astro.url.pathname)}
+                    class="text-white w-12 h-12 flex items-center justify-center focus:outline-none z-[60] transition-all duration-300 rounded-full hover:bg-white/10 font-bold text-base border border-white/20 hover:border-white/50"
+                    aria-label="Cambia Linguauage"
+                >
+                    {Astro.currentLocale === 'en' ? 'IT' : 'EN'}
+                </a>
+                <div class="absolute top-[3.25rem] left-1/2 -translate-x-1/2 pointer-events-none w-max opacity-80 pt-1">
+                    <span class="animate-bounce block text-white text-[10px] sm:text-xs font-medium tracking-wider drop-shadow-md" >{Astro.currentLocale === 'en' ? `↑ Cambia Lingua` : `↑ Swith Lang`}</span>
+                </div>
+            </div>
+            
+            <!-- Center: Centered Logo -->
+            {showLogo && (
+                <div class="absolute left-1/2 -translate-x-1/2 top-0 flex flex-col items-center text-center pointer-events-none" id="logo-container">
+                    <a href={Astro.currentLocale === 'en' ? "/en/" : "/"} class="flex flex-col items-center pointer-events-auto pt-2">
+                        <img src={logo.src} alt="Indian Icon Logo" class="logo-img h-20 md:h-28 w-auto object-contain transition-all duration-500 filter brightness-0 invert drop-shadow-xl" />
+                    </a>
+                </div>
+            )}
+
+            <!-- Right: Hamburger Button -->
+            <div class="flex items-center">
+                <button 
+                    id="menu-toggle"
+                    class="text-white p-2 focus:outline-none z-[60] transition-colors duration-300 rounded-full hover:bg-white/10"
+                    aria-label="Toggle Menu"
+                >
+                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile/Full-screen Menu Overlay (Drawer from Right) -->
+    <div 
+        id="menu-overlay" 
+        class="fixed inset-y-0 right-0 w-full sm:w-80 bg-primary z-50 flex flex-col pt-32 px-6 sm:px-10 transition-all duration-500 ease-in-out opacity-0 translate-x-full pointer-events-none shadow-2xl"
+    >
+        <div class="flex flex-col space-y-8 text-left">
+            <a href={Astro.currentLocale === 'en' ? "/en/#hero" : "/#hero"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-secondary transition-colors" >{Astro.currentLocale === 'en' ? `Home` : `Home`}</a>
+            <a href={Astro.currentLocale === 'en' ? "/en/#menu" : "/#menu"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-secondary transition-colors" >{Astro.currentLocale === 'en' ? `The Menu` : `Il Menù`}</a>
+            <a href={Astro.currentLocale === 'en' ? "/en/#recensioni" : "/#recensioni"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-secondary transition-colors" >{Astro.currentLocale === 'en' ? `Reviews` : `Recensioni`}</a>
+            <a href={Astro.currentLocale === 'en' ? "/en/#dove-siamo" : "/#dove-siamo"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-secondary transition-colors" >{Astro.currentLocale === 'en' ? `Find Us` : `Dove Siamo`}</a>
+            <a href={Astro.currentLocale === 'en' ? "/en/catering" : "/catering"} class="menu-link text-2xl font-playfair font-bold text-white hover:text-secondary transition-colors" >{Astro.currentLocale === 'en' ? `Catering` : `Catering`}</a>
+        </div>
+        <div class="mt-16 pt-8 border-t border-white/10">
+            <a href="https://wa.me/message/6A3K7IYKJASZB1" class="block text-center bg-secondary text-white py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg active:scale-95" >{Astro.currentLocale === 'en' ? `BOOK A TABLE` : `PRENOTA UN TAVOLO`}</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    function toggleMenu() {
+        if (!menuOverlay || !hamburgerIcon || !closeIcon) return;
+        const isOpen = menuOverlay.classList.contains('opacity-100');
+        
+        if (isOpen) {
+            menuOverlay.classList.remove('opacity-100', 'translate-x-0');
+            menuOverlay.classList.add('opacity-0', 'translate-x-full', 'pointer-events-none');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            document.body.style.overflow = '';
+        } else {
+            menuOverlay.classList.remove('opacity-0', 'translate-x-full', 'pointer-events-none');
+            menuOverlay.classList.add('opacity-100', 'translate-x-0');
+            hamburgerIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    menuToggle?.addEventListener('click', toggleMenu);
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (menuOverlay && !menuOverlay.classList.contains('pointer-events-none')) {
+                toggleMenu();
+            }
+        });
+    });
+</script>

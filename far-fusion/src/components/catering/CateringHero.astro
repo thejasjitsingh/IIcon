@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import c4Img from '../../assets/images/c4.png';
+---
+
+<section class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#1a1a1a] py-10 md:py-32">
+    <!-- Background Image Mock -->
+    <div class="absolute inset-0 z-0">
+        <Image src={c4Img} alt="Indian Catering in Umbria Italy - Elegant Wedding Setup" class="w-full h-full object-cover opacity-70" />
+        <!-- Elegant Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-primary/90"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center text-white flex flex-col items-center">
+        <span class="inline-block mb-4 text-secondary font-bold tracking-[0.2em] uppercase text-xs md:text-sm" >{Astro.currentLocale === 'en' ? `EXPERIENCE AND TRADITION` : `ESPERIENZA E TRADIZIONE`}</span>
+        <h1 
+            class="font-playfair text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-2xl leading-tight"
+            
+        >{Astro.currentLocale === 'en' ? `Authentic Indian Catering` : `Catering Indiano di Eccellenza`}</h1>
+        <p 
+            class="max-w-xl mx-auto text-white/90 text-sm md:text-lg font-light mb-8 leading-relaxed"
+            
+        >{Astro.currentLocale === 'en' ? `We bring the authentic magic, scents, and flavors of India to your special event. An unforgettable culinary journey tailored for you.` : `Portiamo l'autentica magia, i profumi e i sapori dell'India nel tuo evento speciale. Un viaggio culinario indimenticabile su misura per te.`}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a 
+                href="https://wa.me/message/6A3K7IYKJASZB1"
+                title="Request a quote for Indian Catering in Umbria Italy"
+                class="inline-block bg-secondary text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-white hover:text-secondary transition-all duration-300 shadow-xl w-full sm:w-auto min-w-[180px]"
+                
+            >{Astro.currentLocale === 'en' ? `REQUEST QUOTE` : `RICHIEDI PREVENTIVO`}</a>
+            <a 
+                href="#servizi"
+                title="Discover our Indian Catering Services in Umbria"
+                class="inline-block bg-transparent text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base border border-white hover:bg-white hover:text-primary transition-all duration-300 w-full sm:w-auto min-w-[180px]"
+                
+            >{Astro.currentLocale === 'en' ? `DISCOVER SERVICES` : `SCOPRI I SERVIZI`}</a>
+        </div>
+    </div>
+</section>

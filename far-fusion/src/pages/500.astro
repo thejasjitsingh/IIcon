@@ -3,24 +3,24 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="500 - Errore del Server | Indian Icon" showLogo={false}>
-  <section class="min-h-screen flex items-center justify-center px-4 bg-[#FDFBF7] pb-20">
+  <section class="min-h-screen flex items-center justify-center px-4 bg-canvas pb-20">
     <div class="text-center max-w-2xl">
-      <h1 class="font-playfair text-8xl md:text-9xl text-[#722F37] mb-4">500</h1>
-      <div class="h-1 w-20 bg-[#C5A059] mx-auto mb-8"></div>
+      <h1 class="font-playfair text-8xl md:text-9xl text-primary mb-4">500</h1>
+      <div class="h-1 w-20 bg-secondary mx-auto mb-8"></div>
       
       <h2 
-        class="font-playfair text-3xl md:text-4xl text-[#722F37] mb-6"
+        class="font-playfair text-3xl md:text-4xl text-primary mb-6"
         
       >{Astro.currentLocale === 'en' ? `Something went wrong in the kitchen` : `Qualcosa è andato storto in cucina`}</h2>
       
       <p 
-        class="text-lg text-[#722F37]/70 mb-10 leading-relaxed"
+        class="text-lg text-primary/70 mb-10 leading-relaxed"
         
       >{Astro.currentLocale === 'en' ? `An unexpected error occurred. Our digital chefs are already working to fix the problem. Please try again later.` : `C'è stato un errore imprevisto. I nostri chef digitali stanno già lavorando per risolvere il problema. Per favore, riprova più tardi.`}</p>
       
       <a 
         href={Astro.currentLocale === 'en' ? "/en/" : "/"} 
-        class="inline-block bg-[#722F37] text-white px-10 py-4 rounded-full font-bold hover:bg-[#C5A059] transition-colors shadow-lg active:scale-95"
+        class="inline-block bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-secondary transition-colors shadow-lg active:scale-95"
         
       >{Astro.currentLocale === 'en' ? `BACK TO HOME` : `TORNA ALLA HOME`}</a>
     </div>

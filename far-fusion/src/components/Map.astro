@@ -1,51 +1,51 @@
 ---
 ---
-<section id="dove-siamo" class="py-16 md:py-24 bg-white relative overflow-hidden">
+<section id="dove-siamo" class="py-10 md:py-24 bg-white relative overflow-hidden">
   <!-- Decorative Background -->
   <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#FDFBF7] to-transparent"></div>
   
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
     <div class="text-center mb-12 md:mb-16">
       <span 
-        class="inline-block mb-4 text-[#C5A059] font-bold tracking-[0.2em] uppercase text-xs md:text-sm"
+        class="inline-block mb-4 text-secondary font-bold tracking-[0.2em] uppercase text-xs md:text-sm"
         
       >{Astro.currentLocale === 'en' ? `We are waiting for you` : `Ti aspettiamo`}</span>
       <h2 
-        class="font-playfair text-[#722F37] text-3xl sm:text-4xl md:text-5xl mb-6"
+        class="font-playfair text-primary text-3xl sm:text-4xl md:text-5xl mb-6"
         
       >{Astro.currentLocale === 'en' ? `Where We Are` : `Dove Siamo`}</h2>
-      <div class="h-1 w-20 md:h-1.5 md:w-24 bg-[#C5A059] mx-auto rounded-full"></div>
+      <div class="h-1 w-20 md:h-1.5 md:w-24 bg-secondary mx-auto rounded-full"></div>
     </div>
     
     <div class="grid lg:grid-cols-3 gap-8 md:gap-12 items-start">
       <!-- Info Cards -->
       <div class="lg:col-span-1 space-y-4 md:space-y-6">
-        <div class="bg-[#FAF3E0] p-6 md:p-8 rounded-3xl border border-[#C5A059]/10 shadow-sm">
+        <div class="bg-[#FAF3E0] p-6 md:p-8 rounded-3xl border border-secondary/10 shadow-sm">
           <div class="flex items-center mb-4">
-            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#722F37] flex items-center justify-center mr-3 md:mr-4 text-white">
+            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary flex items-center justify-center mr-3 md:mr-4 text-white">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 class="font-playfair text-[#722F37] text-xl md:text-2xl" >{Astro.currentLocale === 'en' ? `Address` : `Indirizzo`}</h3>
+            <h3 class="font-playfair text-primary text-xl md:text-2xl" >{Astro.currentLocale === 'en' ? `Address` : `Indirizzo`}</h3>
           </div>
-          <p class="text-[#722F37]/80 leading-relaxed pl-11 md:pl-14 text-sm md:text-base">
+          <p class="text-primary/80 leading-relaxed pl-11 md:pl-14 text-sm md:text-base">
             Via Tre Monumenti 12,<br/>
             05100 Terni (TR)
           </p>
         </div>
 
-        <div class="bg-white p-6 md:p-8 rounded-3xl border border-[#722F37]/10 shadow-sm">
+        <div class="bg-white p-6 md:p-8 rounded-3xl border border-primary/10 shadow-sm">
           <div class="flex items-center mb-4">
-            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#C5A059] flex items-center justify-center mr-3 md:mr-4 text-white">
+            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-secondary flex items-center justify-center mr-3 md:mr-4 text-white">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 class="font-playfair text-[#722F37] text-xl md:text-2xl" >{Astro.currentLocale === 'en' ? `Hours` : `Orari`}</h3>
+            <h3 class="font-playfair text-primary text-xl md:text-2xl" >{Astro.currentLocale === 'en' ? `Hours` : `Orari`}</h3>
           </div>
-          <div class="pl-11 md:pl-14 space-y-2 text-[#722F37]/80 text-sm md:text-base">
+          <div class="pl-11 md:pl-14 space-y-2 text-primary/80 text-sm md:text-base">
             <div class="flex justify-between">
               <span >{Astro.currentLocale === 'en' ? `Lunch:` : `Pranzo:`}</span>
               <span class="font-semibold">11:30 - 14:30</span>
@@ -54,14 +54,14 @@
               <span >{Astro.currentLocale === 'en' ? `Dinner:` : `Cena:`}</span>
               <span class="font-semibold">18:30 - 22:30</span>
             </div>
-            <div class="flex justify-between text-[#C5A059] pt-2 border-t border-[#C5A059]/10">
+            <div class="flex justify-between text-secondary pt-2 border-t border-secondary/10">
               <span >{Astro.currentLocale === 'en' ? `Wednesday:` : `Mercoledì:`}</span>
               <span class="font-bold" >{Astro.currentLocale === 'en' ? `Closed` : `Chiuso`}</span>
             </div>
           </div>
         </div>
 
-        <div class="bg-[#722F37] p-6 md:p-8 rounded-3xl text-white shadow-xl">
+        <div class="bg-primary p-6 md:p-8 rounded-3xl text-white shadow-xl">
           <div class="flex items-center mb-4">
             <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/20 flex items-center justify-center mr-3 md:mr-4 text-white">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,14 +70,14 @@
             </div>
             <h3 class="font-playfair text-lg md:text-xl" >{Astro.currentLocale === 'en' ? `Reservations` : `Prenotazioni`}</h3>
           </div>
-          <a href="https://wa.me/message/6A3K7IYKJASZB1" class="block text-xl md:text-2xl font-bold text-[#C5A059] pl-11 md:pl-14 hover:underline">
+          <a href="https://wa.me/message/6A3K7IYKJASZB1" class="block text-xl md:text-2xl font-bold text-secondary pl-11 md:pl-14 hover:underline">
             +39 351 897 7632
           </a>
         </div>
       </div>
 
       <!-- Map -->
-      <div class="lg:col-span-2 h-[400px] md:h-[500px] lg:h-full min-h-[350px] md:min-h-[450px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-[#C5A059]/20 group">
+      <div class="lg:col-span-2 h-[400px] md:h-[500px] lg:h-full min-h-[350px] md:min-h-[450px] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-secondary/20 group">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.334460786522!2d12.648052176540643!3d42.5694209711746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132eef7146522f1d%3A0x6b6d6a2f3e8f8f0!2sVia%20Tre%20Monumenti%2C%2012%2C%2005100%20Terni%20TR!5e0!3m2!1sit!2sit!4v1717750000000!5m2!1sit!2sit" 
           width="100%" 
